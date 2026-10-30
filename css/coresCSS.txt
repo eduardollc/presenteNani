@@ -1,0 +1,14 @@
+Creme
+#F7F0E6
+
+Vinho
+#7B2638
+
+Verde
+#244638
+
+Dourado
+#D7B777
+
+Papel
+#FFFCF7

@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Dancing+Script:wght@500;600&display=swap');
+
+:root {
+    --creme: #F7F0E6;
+    --papel: #FFFCF7;
+    --vinho: #7B2638;
+    --vinho-escuro: #5D1B2A;
+    --verde: #244638;
+    --dourado: #D7B777;
+    --texto: #403831;
+    --borda: #E5D9C8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--creme);
+    color: var(--texto);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+.cabecalho {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 20px 34px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(215, 183, 119, .18), transparent 22%),
+        radial-gradient(circle at 90% 70%, rgba(123, 38, 56, .07), transparent 25%),
+        var(--creme);
+    border-bottom: 1px solid var(--borda);
+}
+
+.ornamento,
+.divisor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: var(--vinho);
+}
+
+.ornamento {
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.ornamento span,
+.divisor span {
+    display: block;
+    width: 52px;
+    height: 1px;
+    background: var(--dourado);
+}
+
+.sobretitulo,
+.etiqueta {
+    color: var(--verde);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+}
+
+h1,
+h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    line-height: 1.2;
+}
+
+.cabecalho h1 {
+    margin: 8px 0 10px;
+    color: var(--vinho);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+.subtitulo {
+    color: var(--verde);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-size: .82rem;
+}
+
+.divisor {
+    margin-top: 22px;
+    color: var(--vinho);
+}
+
+.abertura {
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 72px 20px 55px;
+    text-align: center;
+    background: var(--creme);
+}
+
+.abertura h2 {
+    margin-top: 12px;
+    color: var(--verde);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.abertura h2 span {
+    color: var(--vinho);
+}
+
+.introducao {
+    margin-top: 18px;
+    color: #655B53;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    margin-top: 28px;
+    padding: 14px 28px;
+    border: 2px solid var(--vinho);
+    border-radius: 999px;
+    background: var(--vinho);
+    color: var(--papel);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 7px 18px rgba(123, 38, 56, .14);
+    transition: background-color .25s ease, transform .25s ease, box-shadow .25s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.botao:hover {
+    background: var(--vinho-escuro);
+    border-color: var(--vinho-escuro);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(123, 38, 56, .2);
+}
+
+.botao:active {
+    transform: translateY(0);
+}
+
+.botao:focus-visible,
+.link-surpresa:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 4px;
+}
+
+.pequena-nota {
+    margin-top: 12px;
+    color: #84776A;
+    font-size: .85rem;
+}
+
+.enfeite-arvore {
+    margin-top: 24px;
+    color: var(--vinho);
+    font-size: 28px;
+    transform: rotate(180deg);
+}
+
+.mensagem {
+    width: min(1080px, 90%);
+    margin: 0 auto;
+    padding: 48px 0 88px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr);
+    align-items: center;
+    gap: clamp(36px, 7vw, 90px);
+}
+
+.manuscrito,
+.legenda-manuscrita {
+    color: var(--vinho);
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(1.7rem, 3.5vw, 2.35rem);
+    line-height: 1.25;
+}
+
+.texto-mensagem h2 {
+    margin: 12px 0 20px;
+    color: var(--verde);
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+}
+
+.texto-mensagem p:not(.manuscrito):not(.assinatura-curta) {
+    margin-top: 14px;
+    color: #5B5148;
+}
+
+.assinatura-curta {
+    margin-top: 24px;
+    color: var(--vinho);
+    font-weight: 700;
+}
+
+.assinatura-curta span {
+    color: var(--dourado);
+}
+
+.foto-area {
+    padding: 18px 10px;
+}
+
+.moldura-foto {
+    position: relative;
+    width: min(100%, 360px);
+    margin: 0 auto;
+    padding: 14px 14px 18px;
+    background: var(--papel);
+    box-shadow: 0 12px 28px rgba(64, 56, 49, .13);
+    transform: rotate(2deg);
+}
+
+.fita {
+    position: absolute;
+    z-index: 1;
+    top: -13px;
+    left: 50%;
+    width: 94px;
+    height: 27px;
+    background: rgba(215, 183, 119, .55);
+    transform: translateX(-50%) rotate(-4deg);
+}
+
+.moldura-foto img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #E9DECE;
+}
+
+.espaco-foto {
+    display: none;
+    min-height: 250px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: #F0E5D5;
+    color: var(--verde);
+    text-align: center;
+}
+
+.icone-foto {
+    color: var(--vinho);
+    font-size: 2.5rem;
+}
+
+.espaco-foto small {
+    font-size: .75rem;
+    overflow-wrap: anywhere;
+}
+
+.moldura-foto figcaption {
+    padding-top: 12px;
+    color: var(--vinho);
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.5rem;
+}
+
+.legenda-manuscrita {
+    margin: 28px 0 0;
+    text-align: center;
+    font-size: 1.8rem;
+    transform: rotate(-3deg);
+}
+
+.lembrete {
+    padding: 64px 20px 72px;
+    background: #EFE5D5;
+    text-align: center;
+    border-top: 1px solid var(--borda);
+}
+
+.estrela {
+    color: var(--dourado);
+    font-size: 1.7rem;
+}
+
+.lembrete h2 {
+    max-width: 680px;
+    margin: 12px auto;
+    color: var(--verde);
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.lembrete > p:not(.manuscrito) {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #655B53;
+}
+
+.link-surpresa {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--vinho);
+    font-weight: 700;
+    text-underline-offset: 5px;
+}
+
+.rodape {
+    padding: 35px 20px 28px;
+    background: var(--verde);
+    color: var(--creme);
+    text-align: center;
+}
+
+.divisor-claro {
+    margin-bottom: 18px;
+    color: var(--creme);
+}
+
+.divisor-claro span {
+    background: var(--dourado);
+}
+
+.rodape > p {
+    font-size: .8rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.rodape-assinatura {
+    margin-top: 22px;
+    color: #F2D9D6;
+}
+
+.rodape-assinatura span {
+    color: var(--dourado);
+}
+
+@media (max-width: 700px) {
+    .cabecalho {
+        padding: 35px 18px 28px;
+    }
+
+    .sobretitulo,
+    .etiqueta {
+        font-size: .64rem;
+        letter-spacing: .14em;
+    }
+
+    .subtitulo {
+        font-size: .7rem;
+        letter-spacing: .08em;
+    }
+
+    .abertura {
+        min-height: 390px;
+        padding: 58px 20px 42px;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mensagem {
+        width: min(100% - 40px, 520px);
+        padding: 28px 0 58px;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .foto-area {
+        width: min(100%, 360px);
+        margin: 0 auto;
+    }
+
+    .moldura-foto {
+        width: 88%;
+    }
+
+    .espaco-foto {
+        min-height: 220px;
+    }
+
+    .lembrete {
+        padding: 48px 22px 54px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
